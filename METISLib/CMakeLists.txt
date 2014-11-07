@@ -5,7 +5,7 @@ file(GLOB metis_sources *.c)
 
 # Build libmetis.
 add_library(metis STATIC ${metis_sources})
-target_include_directories(metis PRIVATE ${MPI_C_INCLUDE_PATH} ${MPI_Fortran_INCLUDE_PATH})
+target_include_directories(metis PUBLIC ${MPI_C_INCLUDE_PATH} ${MPI_Fortran_INCLUDE_PATH})
 set_target_properties(metis PROPERTIES OUTPUT_NAME metis-${METIS_VERSION})
 target_include_directories(metis PUBLIC 
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
